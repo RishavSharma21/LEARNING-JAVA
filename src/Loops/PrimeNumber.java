@@ -20,7 +20,7 @@ public class PrimeNumber {
         else if (x == 0) {
             System.out.println("Prime Number");
         }
-
-
+       
+     System.out.println("Chages made through github");
     }
 }
