@@ -21,6 +21,5 @@ public class PrimeNumber {
             System.out.println("Prime Number");
         }
        
-     System.out.println("Chages made through github");
     }
 }
