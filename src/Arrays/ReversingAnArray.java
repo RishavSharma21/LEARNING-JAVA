@@ -28,7 +28,8 @@ public class ReversingAnArray {
     }
 
     static void reversingArray2(int[] arr){    //Method 2 'IN PLACE REVERSE'  "With for loop"
-        for (int i = 0 , j = arr.length-1; i < j; i++ , j--) {
+        for (int i = 0 , j = arr.length-1; i < j ; i++ , j--) {      //i < j ensures the middle elements in odd array do not swap with himself.
+                                                                     // i <=j it would have performed one extra (unnecessary) swap of the middle element
                swappingArray(arr,i,j);
             }
         }
@@ -55,10 +56,10 @@ public class ReversingAnArray {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-//        int[] ans = reversingArray(arr);
+        int[] ans = reversingArray(arr);
 //        printArray(ans);
-        reversingArray2(arr);
-//        System.out.println(Arrays.toString(arr));
+//        reversingArray2(arr);
+        System.out.println(Arrays.toString(arr));
         reverseArray3(arr);
 //        System.out.println(Arrays.toString(arr));
 
