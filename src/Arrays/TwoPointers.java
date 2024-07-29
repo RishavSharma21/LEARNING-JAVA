@@ -17,8 +17,17 @@ public class TwoPointers {
         arr[i] = arr[j];
         arr[j] = temp;
     }
-    //Sort an Array consisting of only 0s and 1s  [APPROACH 1]
 
+    static void reverseArray3(int[] arr){    //Same like method 2 "While loop"
+        int i = 0,j = arr.length-1;
+        while (i < j){
+            swap(arr,i,j);
+            i++;
+            j--;
+        }
+    }
+
+    //Sort an Array consisting of only 0s and 1s  [APPROACH 1]
     static void SortZeroesAndOnes(int[] arr){
         int zeroes = 0;
         for (int i = 0; i < arr.length; i++) {
@@ -58,6 +67,49 @@ public class TwoPointers {
         }
     }
 
+    //Wap to sort the even and odd numbers in the array Relative order od array does not matter
+    //Relative array example arr = 1 8 3 2 9 , 'ans' arr = 1 8 2 3 9 can be our answer
+    static void sortArrayByParity(int[] arr){
+        int n = arr.length;
+        int i = 0;
+        int j = n-1;
+
+        while (i < j){
+            if(arr[i] % 2 == 1 && arr[j] % 2 == 0){
+                swap(arr,i,j);
+                i++;
+                j--;
+            }
+
+            if(arr[i] % 2 == 0){
+                i++;
+            }
+            if(arr[j] % 2 == 1){
+                j--;
+            }
+        }
+    }
+
+    //Given an array 'a' sorted in non-decreasing order,return an array of the squares of each number sorted in non-decreasing order
+
+    static int[] sortSquares(int[] arr){
+        int n = arr.length;
+        int i = 0, j = n-1;
+        int[] ans = new int[n];
+        int k = 0;
+
+        while (i <= j){
+            if(Math.abs(arr[i]) > Math.abs(arr[j])){
+                ans[k++] = arr[i] * arr[i];
+                i++;
+            }
+            else {
+                ans[k++] = arr[j] * arr[j];
+                j--;
+            }
+        }
+        return ans;
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the size of Array:");
@@ -72,11 +124,16 @@ public class TwoPointers {
         System.out.println("Original Array");
         printArray(arr);
 
-        SortZeroesAndOnes(arr);
+//        SortZeroesAndOnes(arr);
         System.out.println("Sorted Array");
 //        printArray(arr);
-        sortingZeroesAndOnes2(arr);
-        printArray(arr);
+//        sortingZeroesAndOnes2(arr);
+//        printArray(arr);
+//        sortArrayByParity(arr);
+        int[] ans = sortSquares(arr);
+        reverseArray3(ans);
+        printArray(ans);
+
 
 
     }
