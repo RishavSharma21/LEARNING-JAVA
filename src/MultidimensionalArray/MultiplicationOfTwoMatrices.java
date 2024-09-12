@@ -2,7 +2,7 @@ package MultidimensionalArray;
 
 import java.util.Scanner;
 
-public class AdditionOfTwoMatrices {
+public class MultiplicationOfTwoMatrices {
 
     static void printMatrix(int[][] matrix){
         for (int i = 0; i < matrix.length; i++) {
@@ -12,21 +12,29 @@ public class AdditionOfTwoMatrices {
             System.out.println();
         }
     }
-    static void add(int[][] a,int r1,int c1,int[][] b,int r2,int c2){
-        if(r1 != r2 || c1 != c2){
-            System.out.println("Wrong Input - Addition not possible");
-            return;       //nothing will execute after the return
-        }
-        int[][] sum = new int[r1][c1];
+    
+    //Write a program to display Multiplication of two matrices entered by the user.
+    static void multiply(int[][] a,int r1,int c1,int[][] b,int r2,int c2){
 
-        for (int i = 0; i < r1;i++){
-            for (int j = 0; j < c1; j++) {      //row number
-                sum[i][j] = a[i][j] + b[i][j];  //column number
+//       Point to Remember :- No of columns in matrix A should be equal to no of rows in matrix B.
+
+        if(c1 != r2){
+            System.out.println("Multiplication Not possible - wrong Dimension");
+            return;
+        }
+
+        int[][] mul = new int[r1][c2];
+        for (int i = 0; i < r1; i++) {    //row number
+            for (int j = 0; j < c2; j++) {  //column number
+                for (int k = 0 ; k < c1;k++){     // k < c1 || k < r2 both are same
+                    mul[i][j] += (a[i][k] * b[k][j]);       //Dry run on notebook
+                }
             }
         }
-        System.out.println("Sum of Matrix 1 and Matrix 2");
-        printMatrix(sum);
+        System.out.println("Multiplication of two matrices");
+        printMatrix(mul);
     }
+
     public static void main(String[] args) {
         Scanner sc  = new Scanner(System.in);
         System.out.println("Enter No of Rows and Columns");
@@ -54,9 +62,9 @@ public class AdditionOfTwoMatrices {
         System.out.println("Matrix 2");
         printMatrix(b);
 
-        add(a,r1,c1,b,r2,c2);
-
-
-
+        multiply(a,r1,c1,b,r2,c2);
     }
 }
+
+
+
