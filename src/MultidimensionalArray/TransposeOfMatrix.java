@@ -30,9 +30,9 @@ public class TransposeOfMatrix {
 
       for(int i =0 ;i < r;i++){
           for(int j = i+1;j < r;j++) {
-              int t = matrix[i][j];
+              int temp = matrix[i][j];
               matrix[i][j] = matrix[j][i];
-              matrix[j][i] = t;
+              matrix[j][i] = temp;
           }
         }
     }
