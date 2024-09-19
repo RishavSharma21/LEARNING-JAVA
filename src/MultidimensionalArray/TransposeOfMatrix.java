@@ -26,7 +26,7 @@ public class TransposeOfMatrix {
     }
 
     // Below code is valid only for r = c
-    static void findTranspose2(int[][] matrix , int r , int c){
+    static void transposeInPlace(int[][] matrix , int r , int c){
 
       for(int i =0 ;i < r;i++){
           for(int j = i+1;j < r;j++) {
@@ -55,7 +55,7 @@ public class TransposeOfMatrix {
 
         System.out.println("Transpose of Matrix");
         int[][] ans = findTranspose(matrix,r,c);
-//        findTranspose2(matrix,r,c);
+//        transposeInPlace(matrix,r,c);
         printMatrix(ans);
     }
 }
