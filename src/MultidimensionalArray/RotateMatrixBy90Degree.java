@@ -39,14 +39,13 @@ public class RotateMatrixBy90Degree {
     }
 
     static void reverseColumn(int[][] matrix , int n ){
-//        for (int j = 0; j < n; j++) {
-//            for (int i = 0; i < n/2; i++) {
-//                int temp = matrix[i][j];
-//                matrix[i][j]= matrix[n-i-1][j];
-//                matrix[n-i-1][j] = temp;
-//            }
-//        }
-
+        for (int j = 0; j < n; j++) {
+            for (int i = 0; i < n/2; i++) {
+                int temp = matrix[i][j];
+                matrix[i][j]= matrix[n-i-1][j];
+                matrix[n-i-1][j] = temp;
+            }
+        }
     }
     //rotating a  square matrix
     static void rotateMatrix(int[][] matrix,int n){      //int n because here r = c
