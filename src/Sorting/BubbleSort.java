@@ -2,7 +2,7 @@ package Sorting;
 
 import java.util.Scanner;
 
-public class CheckSortedArray {
+public class BubbleSort {
     static void printArray(int[] arr) {             //Function for printing the array
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
