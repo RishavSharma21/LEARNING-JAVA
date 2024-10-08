@@ -10,7 +10,7 @@ public class SelectionSort {
         System.out.println();
     }
 
-    static void findMin(int[] arr){
+    static void findMinIndex(int[] arr){
         int min = Integer.MAX_VALUE;
         int minIndex = -1;
         for (int i = 0; i < arr.length; i++) {
