@@ -107,7 +107,7 @@ public class Problems {
     }
 
     //WAP to print the p power q p^q
-    static int power(int p,int q){
+    static int power(int p,int q){   //p^q
         if(q == 0) return 1;
 
         return power(p,q-1) * p;
