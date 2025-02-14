@@ -59,6 +59,19 @@ public class Questions {
         return ans;
     }
 
+
+    //find last index of given target
+    static int lastIndex(int[] arr, int target){
+        int lastIndex = -1;
+
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i] == target){
+                lastIndex = i;
+            }
+        }
+        return lastIndex;
+    }
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -72,6 +85,9 @@ public class Questions {
             arr[i] = sc.nextInt();
         }
 
+//        int target = sc.nextInt();
+
+
 //        System.out.print("Enter the element x:"+" ");
 //        int x = sc.nextInt();
 
@@ -82,5 +98,6 @@ public class Questions {
 //        int[] ans = smallestAndlargestElement(arr);
 //        System.out.println("Smalllest: "+ans[0]);
 //        System.out.println("Largest: "+ans[1]);
+//        System.out.println(lastIndex(arr,target));
     }
 }
