@@ -88,8 +88,44 @@ public class AssignmentQuestions {
         return arr[k-1];   //(k-1) for 0-based indexing
     }
 
+   // given an array where all elements are sorted in increasing order expect
+    //two swapped elements sort it in linear time assume there are no duplicates in the array
 
-        public static void main (String[]args){
+    static void sortArr(int[] arr){
+        int x = -1 , y = -1;
+
+        for(int i  = 1 ; i < arr.length; i++) {
+            if (arr[i - 1] > arr[i]) {
+                if (x == -1) {      //first conflict
+                    x = i - 1;
+                    y = i;
+                }else {   //second conflict
+                    y = i;
+                }
+            }
+        }
+        int temp = arr[x];
+        arr[x] = arr[y];
+        arr[y] = temp;
+    }
+
+    //arrange negative number followed by positive in the array
+
+    static void partition(int[] arr){
+        int l = 0, r = arr.length-1;
+        while (l < r){
+            while (l < 0) l++;
+            while (r >= 0) r--;
+            if(l < r){
+                int temp = arr[l];
+                arr[l] = arr[r];
+                arr[r] = temp;
+                l++;
+                r--;
+            }
+        }
+    }
+    public static void main (String[]args){
             Scanner sc = new Scanner(System.in);
           System.out.print("Enter the size of Array:");
            int n = sc.nextInt();
@@ -103,8 +139,8 @@ public class AssignmentQuestions {
             System.out.println("Input Array");
             printArray(arr);
 
-            System.out.println("Enter Kth Element");
-            int k = sc.nextInt();
+//            System.out.println("Enter Kth Element");
+//            int k = sc.nextInt();
 
 //            bubbleSort(arr);
             
@@ -112,7 +148,10 @@ public class AssignmentQuestions {
 //            System.out.println(checkSort(arr));
 //            System.out.println(findMinSum(arr));
 //            System.out.println("Kth smallest element is: "+findKthSmallestElement(arr,k));
-
+        sortArr(arr);
+//        printArray(arr);
+        partition(arr);
+        printArray(arr);
         }
     }
 
