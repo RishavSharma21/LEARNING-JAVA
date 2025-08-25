@@ -13,3 +13,8 @@ OOPS - object oriented programming structure/system
 5)Abstraction
 6)Encapsulation
 
+Types of Inheritance
+Single level  A -> B
+multilevel    A -> B -> C
+Hierarchical  A -> B , A -> C
+
