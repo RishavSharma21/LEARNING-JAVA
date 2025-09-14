@@ -19,6 +19,7 @@ public class Problems {
             }
         }
         return fo;
+
     }
     static int LastOccurrence(int[] a,int target){
         int n = a.length;
