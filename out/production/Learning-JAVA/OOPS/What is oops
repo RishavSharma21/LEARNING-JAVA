@@ -1,0 +1,20 @@
+OOPS - object oriented programming structure/system
+
+->Oops is a programming paradigm/methodology
+                       ->paradigm mean a style or way to do work
+                       ->oop is also a style or way to work or we can say development
+
+->6 Pillar of oops Are
+
+1) Class
+2) Object and Methods
+3)Inheritance
+4)Polymorphism
+5)Abstraction
+6)Encapsulation
+
+Types of Inheritance
+Single level  A -> B
+multilevel    A -> B -> C
+Hierarchical  A -> B , A -> C
+
